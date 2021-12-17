@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes aparecer{
+ 
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+body{
+    background-color: aqua;
+}
+
+.cabecalho{
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    height: 10vh;
+    background-color: blue;
+    font-size: 1.5rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    animation: aparecer 5s 
+    
+}
+.cabecalho ul{
+    display: flex;
+
+}
+.cabecalho li{
+      list-style: none;
+      margin:1rem 1rem 1rem 1rem;
+      color:white;
+      
+}
+.cabecalho li a{
+    text-decoration: none;
+    color:white;
+
+}
+.entradas{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: +60px;
+}
+.entradas input{
+    margin: 1rem .1rem;
+}
+section{
+    width: 100vw;
+    height: 100vh;
+}
+.topo_section{
+    position: relative;
+    top: +70px;
+}
