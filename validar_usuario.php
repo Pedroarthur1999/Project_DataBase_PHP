@@ -7,11 +7,12 @@
     <title>Cadastro</title>
 </head>
 
+
   <?php
 
   
   $email = $_POST["email"];
-  $senha = $_POST["password"];
+  $senha = $_POST["senha"];
   $esta_logado = false;
   
 $servername = "sql113.epizy.com";
@@ -34,20 +35,23 @@ if ($conn->connect_error) {
       while($row = $result->fetch_assoc()){
               
           if($row["email"]== $email && $row["senha"]==sha1($senha)){
+              $esta_logado = true;
           }
-
-  }
       }
-      else{
-               echo "0 results";
-          }
-          
+  }
+           else{
+               echo "senha ou email incorretos";
+           }
+
            if($esta_logado){
-               echo "voce logou";
+               header('Location: login.php');
+               exit;
            }
            else{
-               echo "nao logou";
+              echo "<script>alert('tente novamente');location.href=\"index.php\";</script>";
            }
+
+        
  
 $conn->close();
   ?>
